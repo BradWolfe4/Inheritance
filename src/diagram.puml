@@ -1,0 +1,36 @@
+@startuml
+class Person {
+    - ID: String
+    - firstName: String
+    - lastName: String
+    - title: String
+    - YOB: int
+    + getFullName(): String
+    + getFormalName(): String
+    + getAge(): int
+    + toCSV(): String
+    + toJSON(): String
+    + toXML(): String
+}
+
+class Worker {
+    - hourlyPayRate: double
+    + calculateWeeklyPay(hoursWorked: double): double
+    + displayWeeklyPay(hoursWorked: double): void
+    + toCSV(): String
+    + toJSON(): String
+    + toXML(): String
+}
+
+class SalaryWorker {
+    - annualSalary: double
+    + calculateWeeklyPay(hoursWorked: double): double
+    + displayWeeklyPay(hoursWorked: double): void
+    + toCSV(): String
+    + toJSON(): String
+    + toXML(): String
+}
+
+Person <|-- Worker
+Worker <|-- SalaryWorker
+@enduml
